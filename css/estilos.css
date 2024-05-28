@@ -1,0 +1,142 @@
+/* Definición de variables para colores */
+:root{
+    --orange: #00144c;
+    --lightorange: #02ce72;
+    --verylightorange: #acb2d6ba;
+    --gray:#ffffff;
+    --white:#ffffff0c; 
+}
+*{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/*Estilo general de la página*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height:100vh;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(0deg, blue, rgb(0, 0, 151), rgb(0, 0, 113), rgb(0, 0, 48), rgb(0, 0, 0));
+    background-repeat: no-repeat;
+}
+/* Estilo del encabezado */
+h1{
+    margin-top: 200px;
+    color: rgba(255, 255, 255, 0.505);
+    text-align: center;
+  
+}
+/* Estilo del formulario */
+form{
+    /*border: 1px solid-> ayuda visual*/
+    width: 80%;
+    margin: 45px auto;
+    text-align: center;
+    position: sticky;
+   
+}
+form input[type="text"]{
+    background-color: rgba(255, 255, 255, 0.007);
+    color: white;
+    border-style: none;
+    font-size: 1.5em;
+    width:fit-content;
+}
+form input[type="text"]:hover{
+    background-color: rgba(255, 255, 255, 0.075);
+}
+form input[type="text"]::placeholder{
+    color: rgba(255, 255, 255, 0.442);
+}
+/* Elimina el contorno al enfocar el input de texto */
+/*no se creará la línea al escribir*/
+form input[type="text"]:focus{
+    outline: none;
+}
+form input[type="submit"]{
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-style: none;
+    color: var(white);
+}
+form input[type="submit"]:hover{
+    background-color: rgb(121, 120, 120);
+    cursor:pointer;
+    color: var(rgb(0, 0, 0));
+}
+/* Estilo del contenedor de la lista de tareas */
+.list-container{
+    width: 400px;
+    margin: 0 auto;
+  
+   
+    /*border: 1px solid;*/
+}
+/* Estilo de cada tarea en la lista */
+.task-container{
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    padding: 16px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--gray);
+}
+.task-container:hover{
+    background-color: rgba(154, 154, 154, 0.478);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    padding: 16px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: rgb(203, 203, 203);
+}
+/* Estilo del botón de cierre (borrar tarea) */
+.close-btn{
+    width: 20px;
+    height: 20px;
+}
+.close-btn:hover{
+    cursor: pointer;
+}
+/* Estilo de las estadísticas */
+#stats{
+    margin-top:30px;
+    font-size: 1em;
+    color: var(--verylightorange);
+    text-align: center;
+}
+/* Estilo del footer */
+footer {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 10px;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(0deg, blue, rgb(0, 0, 151), rgb(0, 0, 113));
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+@media screen and (max-width: 800px) {
+ 
+    
+    form{
+        /*border: 1px solid-> ayuda visual*/
+        width: 100%;
+        margin: 45px auto;
+        text-align: center;
+        position: sticky;
+       
+    }
+   }
