@@ -2,6 +2,13 @@ let idCounter = 0; // El contador de ID
 const input = document.querySelector('input[type="text"]');
 const list = document.getElementById('list');
 const stats = document.getElementById('stats');
+const header = document.querySelector(".header");
+const corpse=document.querySelector("body");
+window.addEventListener("load", function() {
+    corpse.style.opacity=1;
+    header.style.height = "5vh";
+    window.scrollTo(0, 0);
+});
 
 // Cargar tareas desde localStorage al iniciar
 document.addEventListener('DOMContentLoaded', (event) => {

@@ -9,26 +9,25 @@
     <title>ToDo</title>
 </head>
 <body>
-
-    <!-- Título del programa-->
+    
+ <div class="header">
     <h1>⫷      To Do List      ⫸</h1>
-            
-     <!-- Crear un formulario -->
-    <form action="#" id="userInput">
+ </div>
+ <div class="main">          
+     
+        <form action="#" id="userInput">  
+            <input type="text" placeholder="Nueva tarea..." id="inputText" autofocus>
+            <input type="submit" value="✒" id="addTarea">
+            <div id="stats">
+                <p>Tareas pendientes 0 |Tareas realizadas 0</p><br><br>
+            </div>
+        </form>
        
-         <!-- creamos el input y añadimos el autofocus para que empiece "centrado" en el imput-->
-        <input type="text" placeholder="Nueva tarea..." id="inputText" autofocus>
-         <!-- Me gusta el botón debajo con cierto espacio, en vez de complicar el css he preferido usar salto de línea-->
-        <br>
-        <br> <!-- Botón para enviar la tarea-->
-        <input type="submit" value="✒" id="addTarea">
- <!-- Este contenedor lo tenía en el footer, me gustaba más así, pero ahora el footer tiene la info mía-->
- <div id="stats">
-    <p>Tareas pendientes 0 |Tareas realizadas 0</p><br><br>
 </div>
-    </form>
+
+    
      <!-- El div va a contener todas las tareas-->
-   <div class ="list-container"id="list">
+<div class ="list-container"id="list">
     <!--<div class="task-container">
             <label>
                 <input type="checkbox" checked>
@@ -36,7 +35,7 @@
             <img class="close-btn"src="/img/cubo-de-basura.png">
         </div> -->
     
-   </div>
+</div>
 
 <footer><p>Desarrollado por Phoebe productions<em> Oscar Alonso</em><br></p>
 <p id="fecha"></p></footer>
