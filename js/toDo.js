@@ -3,12 +3,12 @@ const input = document.querySelector('input[type="text"]');
 const list = document.getElementById('list');
 const stats = document.getElementById('stats');
 const header = document.querySelector(".header");
-const corpse=document.querySelector("body");
-window.addEventListener("load", function() {
-    corpse.style.opacity=1;
-    
-    header.style.position ="fixed";
-    header.style.top="0";
+const corpse = document.querySelector("body");
+
+window.addEventListener("load", function () {
+    corpse.style.opacity = 1;
+    header.style.position = "fixed";
+    header.style.top = "0";
     window.scrollTo(0, 0);
     header.style.height = "20%";
 });
@@ -41,17 +41,19 @@ list.addEventListener("click", (event) => {
 function addTask() {
     idCounter++;
     if (input.value != "") {
-        list.innerHTML += 
-        `<div class="task-container" id="${idCounter}">
+        const newTaskHTML = `
+        <div class="task-container" id="${idCounter}">
             <label>
                 <input type="checkbox" id="done">
                 ${input.value}
             </label>
             <img class="close-btn" src="img/cubo-de-basura.png">
         </div>`;
+        list.insertAdjacentHTML('afterbegin', newTaskHTML); // Insertar al principio
         input.value = "";
         saveTasks();
         actualizarStats();
+        list.scrollTop = 0; // Desplazarse al principio
     }
 }
 
@@ -80,15 +82,16 @@ function loadTasks() {
     let tasks = localStorage.getItem('tasks');
     if (tasks) {
         tasks = JSON.parse(tasks);
-        tasks.forEach(task => {
-            list.innerHTML += 
-            `<div class="task-container" id="${task.id}">
+        tasks.reverse().forEach(task => { // Invertir el orden para añadir desde el principio
+            const taskHTML = `
+            <div class="task-container" id="${task.id}">
                 <label>
                     <input type="checkbox" id="done" ${task.done ? 'checked' : ''}>
                     ${task.text}
                 </label>
                 <img class="close-btn" src="img/cubo-de-basura.png">
             </div>`;
+            list.insertAdjacentHTML('afterbegin', taskHTML);
         });
     }
 }
