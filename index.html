@@ -1,46 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head><!-- Etiquetas propias del head: tipo de codivicación, normas de visualización y enlace al archivo de estilo-->
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="css/estilos.css">
     <title>ToDo</title>
 </head>
 <body>
+    <div class="header">
+         <h1>⫷ To Do List ⫸</h1>
+        <div id="stats">
+            <p>Tareas pendientes 0 | Tareas realizadas 0</p>
+        </div>
+       
+    </div>
     
- <div class="header">
-    <h1>⫷      To Do List      ⫸</h1>
- </div>
- <div class="main">          
-     
-        <form action="#" id="userInput">  
+        <div class="list-container" id="list">
+        </div> 
+       
+        
+  
+   
+   
+        <form action="#" id="userInput">
             <input type="text" placeholder="Nueva tarea..." id="inputText" autofocus>
             <input type="submit" value="✒" id="addTarea">
-            <div id="stats">
-                <p>Tareas pendientes 0 |Tareas realizadas 0</p><br><br>
-            </div>
         </form>
-       
-</div>
-
-    
-     <!-- El div va a contener todas las tareas-->
-<div class ="list-container"id="list">
-    <!--<div class="task-container">
-            <label>
-                <input type="checkbox" checked>
-            </label>
-            <img class="close-btn"src="/img/cubo-de-basura.png">
-        </div> -->
-    
-</div>
-
-<footer><p>Desarrollado por Phoebe productions<em> Oscar Alonso</em><br></p>
-<p id="fecha"></p></footer>
- <!-- Enlace a archivo js-->
-<script src="js/toDo.js"></script>   
+   
+    <script src="js/toDo.js"></script>
 </body>
-
 </html>

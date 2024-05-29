@@ -6,8 +6,11 @@ const header = document.querySelector(".header");
 const corpse=document.querySelector("body");
 window.addEventListener("load", function() {
     corpse.style.opacity=1;
-    header.style.height = "5vh";
+    
+    header.style.position ="fixed";
+    header.style.top="0";
     window.scrollTo(0, 0);
+    header.style.height = "20%";
 });
 
 // Cargar tareas desde localStorage al iniciar

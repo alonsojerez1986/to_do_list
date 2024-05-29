@@ -29,13 +29,15 @@ body{
     background-repeat: no-repeat;
     transition:opacity ease-in-out 2s;
 }
-main{
-    height: 100%;
 
-}
 .header{
     height: 100vh;
+   
+    width: 100%;
+    
     transition:height ease-in-out 2s;
+    backdrop-filter: blur(50px);
+   
 }
 /* Estilo del encabezado */
 h1{
@@ -45,24 +47,30 @@ h1{
   
 }
 /* Estilo del formulario */
-form{
-    /*border: 1px solid-> ayuda visual*/
-    width: 80%;
-    margin: 45px auto;
+form {
+    /* border: 1px solid; /* ayuda visual */
+    width: fit-content;
+    margin-inline: 45px auto;
     text-align: center;
-    position: sticky;
-    top:0;
-   
+    position: fixed;
+    bottom:0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(50px);
+    padding: 1%;
 }
 form input[type="text"]{
-    background-color: rgba(255, 255, 255, 0.007);
+    background-color:transparent;
     color: white;
     border-style: none;
     font-size: 1.5em;
     width:fit-content;
 }
 form input[type="text"]:hover{
-    background-color: rgba(255, 255, 255, 0.075);
+    background-color: rgba(255, 255, 255, 0.253);
 }
 form input[type="text"]::placeholder{
     color: rgba(255, 255, 255, 0.442);
@@ -74,9 +82,8 @@ form input[type="text"]:focus{
 }
 form input[type="submit"]{
     font-size: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    
+    border-radius: 5%;
     border-style: none;
     color: var(white);
 }
@@ -89,7 +96,8 @@ form input[type="submit"]:hover{
 .list-container{
     width: 400px;
     margin: 0 auto;
-    height: fit-content;
+    height: 100%;
+    overflow-y: hidden;
   
    
     /*border: 1px solid;*/
@@ -139,7 +147,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    position:fixed;
+    bottom: 0;
     width: 100%;
     height: fit-content;
     background: linear-gradient(0deg, blue, rgb(0, 0, 151), rgb(0, 0, 113));
